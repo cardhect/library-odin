@@ -1,55 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js" defer></script>
 </head>
-<body onload="hideForm()">
-    <table id="book-shelf">
-        <tbody>
-            <tr>
-                <th>Book</th>
-            </tr> 
-
-        </tbody>
+<body>
+    <nav>
+        <h2>Library</h2>
+    </nav>
+    <div class="main-section">
         
-    </table>
-    <button onclick="displayBooks()">Current Library</button>
-
-    <button onclick="toggleForm()">New Book</button>
-    <form id='myForm' action="" onsubmit="return addBookToLibrary()">
-        <label for="title">Title</label><br>
-        <input type="text" id="title" name="title" value="Catching Fire"><br>
-       
-        <label for="author">Author</label><br>
-        <input type="text" id="author" name="author" value="Suzanne Collin"><br><br>
-       
-        <label for="numofpages">Number of Pages</label><br>
-        <input type="number" id="numofpages" name="numofpages" value="99"><br><br>
-       
-        <label for="haveread">Have you read?</label><br>
-        <input type="radio" id="true" name="haveread" value="true">
-        <label for="true">Yes</label><br>
-        <input type="radio" id="false" name="haveread" value="false">
-        <label for="false">No</label><br><br>
-       
-        <input type="submit" value="Submit" name="submit" onclick="hideForm()">
-      </form> 
+        
+    </div>    
     
-<script>
 
-// function checkForm(){
-//   console.log(document.getElementById('title').value,
-//   document.getElementById('author').value,
-//   document.getElementById('numofpages').value);
-
-
-//   return false;
-// }
-</script>
-
+    <footer></footer>
 </body>
 </html>

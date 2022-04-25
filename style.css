@@ -1,3 +1,28 @@
-table, th, td {
-    border: 1px solid black;
-  }
+nav {
+  background-color: black;
+  color: white;
+  padding: 30px;
+}
+
+.main-section {
+  background-color: grey;
+  height: 75vh;
+}
+
+footer {
+  background-color: brown;
+  height: 15vh;
+}
+
+body,h2,h1 {
+  margin: 0;
+
+}
+
+/* use this to style the book card */
+.card {    
+  width: 25%;
+  height: 40%;
+  background-color: red;
+  /* margin: 10px; */;
+}
