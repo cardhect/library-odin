@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+  padding: 0;
+  }
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
 nav {
   background-color: black;
   color: white;
@@ -11,18 +19,21 @@ nav {
 
 footer {
   background-color: brown;
-  height: 15vh;
+  height: 16vh;
 }
-
-body,h2,h1 {
-  margin: 0;
-
-}
-
 /* use this to style the book card */
 .card {    
   width: 25%;
   height: 40%;
-  background-color: red;
-  /* margin: 10px; */;
+  background-color: whitesmoke;
+  /* margin: 10px; */
+  /* padding: 10px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card>* {
+  margin: 10px;
 }
