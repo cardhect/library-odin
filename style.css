@@ -37,3 +37,9 @@ footer {
 .card>* {
   margin: 10px;
 }
+
+.book-shelf {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

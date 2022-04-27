@@ -1,25 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="script.js" defer></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
-        <h2>Library</h2>
+      <h2>Library</h2>
     </nav>
     <div class="main-section">
-        <button onclick="test()">Enter Book</button>
-        
-    </div>    
-    
+      <button onclick="openForm()">Enter Book</button>
+      <form action="" style="display: none" id="book-form" onsubmit="false">
+        <label for="title">Title:</label>
+        <input type="text" id="title" />
+
+        <label for="author">Author:</label>
+        <input type="text" id="author" />
+
+        <label for="pages">Pages:</label>
+        <input type="number" id="pages" />
+
+        <div>
+          <label for="has-read">Have you read the book?</label>
+          <input type="radio" id="true" name="has-read" value="true" />
+          <label for="true">true</label>
+        </div>
+
+        <div>
+          <input type="radio" id="False" name="has-read" value="false" />
+          <label for="false">False</label>
+        </div>
+        <button type="reset" onclick="submitBook()">Submit</button>
+        <button type="reset" onclick="closeForm()">Close</button>
+      </form>
+      <div class="book-shelf"></div>
+    </div>
 
     <footer>
-        <p>made by hex</p>
+      <p>made by hex</p>
     </footer>
-</body>
+  </body>
 </html>
