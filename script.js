@@ -33,6 +33,7 @@ function createBookCard() {
   //Styles Card element
   card.setAttribute("class", "card");
   card.setAttribute("id", "card" + i);
+  card.setAttribute("data-index-number", i);
   //Adds card to main-section
   main.appendChild(card);
 }
@@ -42,6 +43,7 @@ function addBookToCard() {
     i++;
   }
 
+  const btn = document.createElement("button");
   const card = document.querySelector("#card" + i);
 
   const h1 = document.createElement("h1");
@@ -49,8 +51,10 @@ function addBookToCard() {
   const p = document.createElement("h3");
   const read = document.createElement("h3");
 
+  btn.setAttribute("class","delete");
   // myLibrary[0].author --> can be used to access obj elements in array.
   //adds the title to the card element
+  btn.textContent = "remove book";
   h1.textContent = myLibrary[myLibrary.length - 1].title;
   h2.textContent = "by, " + myLibrary[myLibrary.length - 1].author;
   p.textContent = "Pages: " + myLibrary[myLibrary.length - 1].numOfPages;
@@ -59,15 +63,18 @@ function addBookToCard() {
   card.appendChild(h2);
   card.appendChild(p);
   card.appendChild(read);
+  card.appendChild(btn);
 }
 
 //Display form on button click
 function openForm() {
-  document.getElementById("book-form").style.display = "block";
+  document.getElementById("book-form").style.display = "flex";
+  document.getElementById("enter-btn").style.display = "none";
 }
 
 function closeForm() {
   document.getElementById("book-form").style.display = "none";
+  document.getElementById("enter-btn").style.display = "block";
 }
 
 //Submits book info from form into a displayed Card
@@ -83,4 +90,15 @@ function submitBook() {
   addBookToLibrary(author, title, pages, hasRead);
   createBookCard();
   addBookToCard();
+}
+
+//Remove book function.
+function removeBook() {
+
+let btn = document.querySelectorAll('.delete');
+
+  deletebtn.forEach((button) => {
+    // and for each one we add a 'click' listener
+    button.addEventListener('click', function(e){console.log(e.path[1])});
+  });
 }

@@ -7,27 +7,28 @@ body{
   font-family: Arial, Helvetica, sans-serif;
 }
 nav {
-  background-color: black;
+  background-color: #293241;
   color: white;
   padding: 30px;
 }
 
 .main-section {
-  background-color: grey;
+  background-color: #ee6c4d;
   height: 75vh;
+  padding: 10px;
 }
 
 footer {
-  background-color: brown;
+  background-color: #3D5A80;
   height: 16vh;
 }
 /* use this to style the book card */
 .card {    
   width: 25%;
   height: 40%;
-  background-color: whitesmoke;
-  /* margin: 10px; */
-  /* padding: 10px; */
+  background-color: #E0FBFC;
+  margin: 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,4 +43,21 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.button {
+  background-color: #98C1D9; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }

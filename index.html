@@ -13,7 +13,7 @@
       <h2>Library</h2>
     </nav>
     <div class="main-section">
-      <button onclick="openForm()">Enter Book</button>
+      <button class="button" id="enter-btn" onclick="openForm()">Enter Book</button>
       <form action="" style="display: none" id="book-form" onsubmit="false">
         <label for="title">Title:</label>
         <input type="text" id="title" />
@@ -27,15 +27,12 @@
         <div>
           <label for="has-read">Have you read the book?</label>
           <input type="radio" id="true" name="has-read" value="true" />
-          <label for="true">true</label>
-        </div>
-
-        <div>
+          <label for="true">Yes</label>
           <input type="radio" id="False" name="has-read" value="false" />
-          <label for="false">False</label>
+          <label for="false">No</label>
         </div>
-        <button type="reset" onclick="submitBook()">Submit</button>
-        <button type="reset" onclick="closeForm()">Close</button>
+        <button class="button" type="reset" onclick="submitBook()">Submit</button>
+        <button class="button" type="reset" onclick="closeForm()">Close</button>
       </form>
       <div class="book-shelf"></div>
     </div>
