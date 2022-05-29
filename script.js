@@ -99,6 +99,8 @@ let btn = document.querySelectorAll('.delete');
 
   deletebtn.forEach((button) => {
     // and for each one we add a 'click' listener
-    button.addEventListener('click', function(e){console.log(e.path[1])});
+    button.addEventListener('click', function(e){
+      console.log(e.path[1]);
+    });
   });
 }
