@@ -10,7 +10,7 @@
   </head>
   <body>
     <nav>
-      <h2>Library</h2>
+      <h2>Your Library</h2>
     </nav>
     <div class="main-section">
       <button class="button" id="enter-btn" onclick="openForm()">Enter Book</button>
@@ -24,15 +24,17 @@
         <label for="pages">Pages:</label>
         <input type="number" id="pages" />
 
-        <div>
+        <div class="radio-container">
           <label for="has-read">Have you read the book?</label>
-          <input type="radio" id="true" name="has-read" value="true" />
+          <input type="radio" id="true" name="has-read" value="Yes" />
           <label for="true">Yes</label>
-          <input type="radio" id="False" name="has-read" value="false" />
+          <input type="radio" id="False" name="has-read" value="No" />
           <label for="false">No</label>
         </div>
+      <div class="button-container">
         <button class="button" type="reset" onclick="submitBook()">Submit</button>
         <button class="button" type="reset" onclick="closeForm()">Close</button>
+      </div>
       </form>
       <div class="book-shelf"></div>
     </div>
