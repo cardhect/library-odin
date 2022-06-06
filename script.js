@@ -2,24 +2,31 @@ let myLibrary = [];
 let i = 0;
 
 //book needs (Author, title, number of pages, and wether its been read)
-function Book(author, title, numOfPages, hasBeenRead) {
+function Book(author, title, numOfPages, read ) {
   //The constructor
   (this.author = author),
     (this.title = title),
     (this.numOfPages = numOfPages),
-    (this.hasBeenRead = hasBeenRead),
+    (this.read = read),
     (this.info = function () {
       return title + " by, " + author;
     }),
-    (this.index = function(){
-      return myLibrary.indexOf(Book);
-    })
+    this.readToggle = function () {
+      if (this.read == 'Yes') {
+       return this.read = 'No';
+      } else if (this.read == 'No') {
+        return this.read = 'Yes';
+      } 
+      
+      
+    }
+  }
 
-}
+
 //Adds book object to Array
-function addBookToLibrary(author, title, numOfPages, hasBeenRead) {
+function addBookToLibrary(author, title, numOfPages, read) {
   //Do stuff here
-  const book = new Book(author, title, numOfPages, hasBeenRead);
+  const book = new Book(author, title, numOfPages, read);
   //adds book to myLibrary Array;
   myLibrary.push(book);
 }
@@ -48,6 +55,7 @@ function addBookToCard() {
   }
 
   const btn = document.createElement("button");
+  const toggle = document.createElement("button")
   const card = document.querySelector("#card" + i);
 
   const h1 = document.createElement("h1");
@@ -56,20 +64,30 @@ function addBookToCard() {
   const read = document.createElement("h3");
 
   btn.setAttribute("class","delete");
+  toggle.setAttribute("class","toggle")
   // myLibrary[0].author --> can be used to access obj elements in array.
   //adds the title to the card element
   btn.textContent = "remove book";
+  toggle.textContent = "Have you read?"
   h1.textContent = myLibrary[myLibrary.length - 1].title;
   h2.textContent = "by, " + myLibrary[myLibrary.length - 1].author;
   p.textContent = "Pages: " + myLibrary[myLibrary.length - 1].numOfPages;
-  read.textContent = "Have you read this? " + myLibrary[myLibrary.length - 1].hasBeenRead;
+  read.textContent = "Have you read this? " + myLibrary[myLibrary.length - 1].read;
   card.appendChild(h1);
   card.appendChild(h2);
   card.appendChild(p);
   card.appendChild(read);
   card.appendChild(btn);
+  card.appendChild(toggle)
 
   btn.addEventListener('click',(i) => removeBook(i));
+  toggle.addEventListener('click',(i) => readToggle(i));
+}
+//Still trying to solve how to create a toggle for the Read option
+function readToggle() {
+  let dataIndexNum = parseInt(i.target.parentElement.attributes[2].value);
+
+  myLibrary[dataIndexNum].toggle;
 }
 //Remove book function.
 function removeBook(i) {  
@@ -113,5 +131,3 @@ function closeForm() {
   document.getElementById("book-form").style.display = "none";
   document.getElementById("enter-btn").style.display = "block";
 }
-
-
