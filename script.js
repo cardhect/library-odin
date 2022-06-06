@@ -84,16 +84,23 @@ function addBookToCard() {
   toggle.addEventListener('click',(i) => readToggle(i));
 }
 //Still trying to solve how to create a toggle for the Read option
-function readToggle() {
+function readToggle(i) {
   let dataIndexNum = parseInt(i.target.parentElement.attributes[2].value);
-
-  myLibrary[dataIndexNum].toggle;
+  console.log(dataIndexNum);
+  myLibrary[dataIndexNum-1].readToggle();
+  console.log(i);
+  let parentCard = document.getElementById(i.target.parentElement.attributes[1].value);
+  console.log(parentCard);
+  parentCard.children[3].textContent = "Have you read this? " + myLibrary[dataIndexNum-1].read; 
+  // c.children[3].textContent = 'voova';
 }
 //Remove book function.
 function removeBook(i) {  
   
   let deleteBook = i.target.parentElement;
+  console.log(deleteBook);
   let dataIndexNum = parseInt(i.target.parentElement.attributes[2].value);
+  console.log(dataIndexNum);
   deleteBook.remove();
   myLibrary.splice(dataIndexNum-1,1);
 
