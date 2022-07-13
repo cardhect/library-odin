@@ -1,6 +1,6 @@
 let myLibrary = [];
 let i = 0;
-
+//change into class
 //book needs (Author, title, number of pages, and wether its been read)
 function Book(author, title, numOfPages, read ) {
   //The constructor
