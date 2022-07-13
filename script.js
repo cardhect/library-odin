@@ -53,11 +53,10 @@ function addBookToCard() {
   if (myLibrary.length > i) {
     i++;
   }
-
+//Elements
   const btn = document.createElement("button");
   const toggle = document.createElement("button")
   const card = document.querySelector("#card" + i);
-
   const h1 = document.createElement("h1");
   const h2 = document.createElement("h2");
   const p = document.createElement("h3");
@@ -65,7 +64,7 @@ function addBookToCard() {
 
   btn.setAttribute("class","delete");
   toggle.setAttribute("class","toggle")
-  // myLibrary[0].author --> can be used to access obj elements in array.
+
   //adds the title to the card element
   btn.textContent = "remove book";
   toggle.textContent = "Have you read?"
@@ -80,6 +79,7 @@ function addBookToCard() {
   card.appendChild(btn);
   card.appendChild(toggle)
 
+  //Event listener for removing the book from the array/dom. Event listener for the read option toggle. 
   btn.addEventListener('click',(i) => removeBook(i));
   toggle.addEventListener('click',(i) => readToggle(i));
 }
@@ -91,7 +91,7 @@ function readToggle() {
 }
 //Remove book function.
 function removeBook(i) {  
-  
+  //update this because idk what data you are grabbing.
   let deleteBook = i.target.parentElement;
   let dataIndexNum = parseInt(i.target.parentElement.attributes[2].value);
   deleteBook.remove();
