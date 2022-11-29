@@ -1,3 +1,5 @@
+
+
 let myLibrary = [];
 let i = 0;
 
@@ -136,3 +138,21 @@ function closeForm() {
 	document.getElementById("book-form").style.display = "none";
 	document.getElementById("enter-btn").style.display = "block";
 }
+function formValidate() {
+    console.log('form validating commense.....');
+    const titleInput = document.getElementById('title');
+
+    titleInput.addEventListener("input", (Event) => {
+        if (titleInput.validity.typeMistach) {
+            titleInput.setCustomValidity("I am expecting an e-mail address!");
+            titleInput.reportValidity();
+        } else {
+            titleInput.setCustomValidity("");
+        }
+      
+        
+    })
+}
+
+
+formValidate();
