@@ -19,20 +19,20 @@
         <input type="text" id="title" required/>
 
         <label for="author">Author:</label>
-        <input type="text" id="author" />
+        <input type="text" id="author" required />
 
         <label for="pages">Pages:</label>
-        <input type="number" id="pages" />
+        <input type="number" id="pages" required />
 
         <div class="radio-container">
           <label for="has-read">Have you read the book?</label>
-          <input type="radio" id="true" name="has-read" value="Yes" />
+          <input type="radio" id="true" name="has-read" value="Yes" class="has-read-radio"/>
           <label for="true">Yes</label>
-          <input type="radio" id="False" name="has-read" value="No" />
+          <input type="radio" id="False" name="has-read" value="No" class="has-read-radio" checked="true"/>
           <label for="false">No</label>
         </div>
       <div class="button-container">
-        <button class="button" type="reset" onclick="submitBook()">Submit</button>
+        <button id="submit-btn" class="button" type="reset" onclick="">Submit</button>
         <button class="button" type="reset" onclick="closeForm()">Close</button>
       </div>
       </form>

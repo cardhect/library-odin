@@ -1,5 +1,3 @@
-
-
 let myLibrary = [];
 let i = 0;
 
@@ -15,7 +13,7 @@ class Book {
 			} else if (this.read == "No") {
 				return (this.read = "Yes");
 			}
-		}
+		};
 	}
 }
 
@@ -91,11 +89,9 @@ function readToggle(i) {
 	console.log(parentCard);
 	parentCard.children[3].textContent =
 		"Have you read this? " + myLibrary[dataIndexNum - 1].read;
-
 }
 // Remove book function.
 function removeBook(i) {
-
 	let deleteBook = i.target.parentElement;
 	console.log(deleteBook);
 	let dataIndexNum = parseInt(i.target.parentElement.attributes[2].value);
@@ -139,20 +135,50 @@ function closeForm() {
 	document.getElementById("enter-btn").style.display = "block";
 }
 function formValidate() {
-    console.log('form validating commense.....');
-    const titleInput = document.getElementById('title');
+	const formSubmit = document.getElementById("submit-btn");
+	console.log("form validating commense.....");
+	const titleInput = document.getElementById("title");
+	const authorInput = document.getElementById("author");
+	const pagesInput = document.getElementById("pages");
+	
+	formSubmit.addEventListener("click", (event) => {
+		if (!titleInput.validity.valueMissing) {
+			console.log("this is good to go!");
+			titleInput.setCustomValidity("");
+		} else {
+			titleInput.setCustomValidity("Dont forget the book title!");
+			titleInput.reportValidity();
+		}
 
-    titleInput.addEventListener("input", (Event) => {
-        if (titleInput.validity.typeMistach) {
-            titleInput.setCustomValidity("I am expecting an e-mail address!");
-            titleInput.reportValidity();
-        } else {
-            titleInput.setCustomValidity("");
-        }
-      
-        
-    })
+		if (!authorInput.validity.valueMissing) {
+			console.log("this is good to go!");
+			authorInput.setCustomValidity("");
+		} else {
+			authorInput.setCustomValidity("Dont forget the book author!");
+			authorInput.reportValidity();
+		}
+
+		if (!pagesInput.validity.valueMissing) {
+			console.log("this is good to go!");
+			pagesInput.setCustomValidity("");
+		} else {
+			pagesInput.setCustomValidity("Dont forget the amount of pages");
+			pagesInput.reportValidity();
+		}
+
+		
+
+		//submits form if all inputs are valid.
+		const formElement = document.getElementById("book-form");
+		let formValid = formElement.checkValidity();
+		if (formValid) {
+			submitBook();
+		} else {
+			event.preventDefault();
+		}
+
+		//if form cannot be validated ---- prevent default
+	});
 }
-
 
 formValidate();
